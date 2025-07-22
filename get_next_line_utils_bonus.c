@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clumertz <clumertz@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: clumertz <clumertz@student.42porto.com>   m>#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 15:56:59 by clumertz          #+#    #+#             */
-/*   Updated: 2025/05/20 19:45:57 by clumertz         ###   ########.fr       */
+/*   Updated: 2025/05/20 19:46:28 by clumertz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	new_line(char *line)
 {
@@ -23,6 +23,26 @@ int	new_line(char *line)
 		line++;
 	}
 	return (0);
+}
+
+void	ft_movbuf(char *buffer)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = ft_strlen(buffer);
+	while (buffer[size] != '\0')
+	{
+		buffer[i] = buffer[size];
+		i++;
+		size++;
+	}
+	while (i < BUFFER_SIZE +1)
+	{
+		buffer[i] = '\0';
+		i++;
+	}
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -77,26 +97,6 @@ void	ft_bzero(char *s, int n)
 	while (i < n)
 	{
 		s[i] = '\0';
-		i++;
-	}
-}
-
-void	ft_movbuf(char *buffer)
-{
-	int	i;
-	int	size;
-
-	i = 0;
-	size = ft_strlen(buffer);
-	while (buffer[size] != '\0')
-	{
-		buffer[i] = buffer[size];
-		i++;
-		size++;
-	}
-	while (i < BUFFER_SIZE +1)
-	{
-		buffer[i] = '\0';
 		i++;
 	}
 }
