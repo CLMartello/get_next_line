@@ -12,5 +12,5 @@ Get_next_line is a classical project of 42 school to implement a function which 
 1. Clone the repository.
 2. Mandatory get_next_line operates with one FD and get_next_line_bonus operates with multiples FDs.
 3. Uncomment main().
-4. Compile using gcc.
+4. Command "make" to compile.
 5. Test either with file.txt or from standard input .
